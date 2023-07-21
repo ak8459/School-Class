@@ -26,10 +26,7 @@ const navLinks = [
         name: "Pricing",
         url: "/pricing"
     },
-    {
-        name: "Journal",
-        url: "/journal"
-    },
+
     {
         name: "Contact",
         url: "/contact"
