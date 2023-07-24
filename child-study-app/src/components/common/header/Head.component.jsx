@@ -5,9 +5,12 @@ import "../../../Routes/Header.styles.css"
 const Head = () => {
     // const [isAuth, setIsAuth] = useState( false )
     let navigate = useNavigate();
-    const { isAuth } = useContext( AuthContext )
+    const { isAuth, setShowOnlyAdmin } = useContext( AuthContext )
 
-    console.log( isAuth.isAuth );
+    const handleLogin = () => {
+        navigate( "/login" )
+        setShowOnlyAdmin( true )
+    }
     return (
         <>
             <section className='head'>
@@ -22,7 +25,7 @@ const Head = () => {
                         <i className='fab fa-twitter icon'></i>
                         <span className='loginContainer'>
                             <i onClick={() => navigate( "/login" )} className="fa-solid fa-right-to-bracket login-icon">
-                                {isAuth.isAuth ? "LOGOUT" : "LOGIN"}
+                                {isAuth.isAuth ? <span>LOGOUT</span> : <span onClick={handleLogin} >LOGIN</span>}
                             </i>
                         </span>
                     </div>

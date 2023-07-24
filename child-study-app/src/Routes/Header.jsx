@@ -60,7 +60,7 @@ const Header = () => {
                         {click ? <i className='fa fa-times'></i> : <i className='fa fa-times'></i>}
                     </button>
                 </nav>
-            </header >
+            </header>
 
         </>
     )

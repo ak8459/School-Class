@@ -1,12 +1,27 @@
-import React from 'react'
-import { coursesCard } from '../../Data/dummyData'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+// import { coursesCard } from '../../Data/dummyData'
 import './Course.style.css'
 const CourseCard = () => {
+    const [courses, setCourses] = useState( [] )
+
+    function fetchCourses() {
+
+        axios.get( 'https://courses-server-udy6.onrender.com/courses' ).then( ( res ) => {
+            setCourses( res.data )
+        } )
+    }
+
+    useEffect( () => {
+        fetchCourses()
+    }, [] )
+
+
     return (
         <>
             <section className='coursesCard'>
                 <div className='container grid2'>
-                    {coursesCard.map( ( val ) => (
+                    {courses.map( ( val ) => (
                         <div className='items'>
                             <div className='content flex'>
                                 <div className='left'>

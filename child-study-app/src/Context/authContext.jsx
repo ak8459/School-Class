@@ -10,7 +10,7 @@ const initialState = {
 }
 export const AuthContextProvider = ( { children } ) => {
     const [isAuth, setIsAuth] = useState( initialState );
-
+    const [showOnlyAdmin, setShowOnlyAdmin] = useState( false );
     const loginUser = () => {
 
     }
@@ -19,8 +19,10 @@ export const AuthContextProvider = ( { children } ) => {
 
     }
 
+
+
     return (
-        <AuthContext.Provider value={{ isAuth, setIsAuth }}>
+        <AuthContext.Provider value={{ isAuth, setIsAuth, showOnlyAdmin, setShowOnlyAdmin }}>
             {children}
         </AuthContext.Provider>
     )
