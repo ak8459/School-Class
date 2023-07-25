@@ -8,7 +8,7 @@ import Pricing from '../Pages/Pricing/Pricing';
 import Team from '../Pages/Team/Team';
 import CourseHome from '../Pages/allCourses/CourseHome';
 import Footer from '../components/Footer/Footer';
-import PrivateComp from '../components/PrivatePage/PrivateComp';
+// import PrivateComp from '../components/PrivatePage/PrivateComp';
 import AuthUser from '../components/SignUp/AuthUser';
 const AllRoutes = () => {
     const { isAuth: { isAuth } } = useContext( AuthContext )
@@ -20,15 +20,15 @@ const AllRoutes = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/courses" element={
-                    <PrivateComp>
-                        <CourseHome />
-                    </PrivateComp>
+                    // <PrmivateComp>
+                    <CourseHome />
+                    // </PrmivateComp>
                 } />
                 <Route path="/team" element={<Team />} />
                 <Route path="/pricing" element={
-                    <PrivateComp>
-                        <Pricing />
-                    </PrivateComp>
+                    // <PrivateComp>
+                    <Pricing />
+                    // </PrivateComp>
                 } />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<AuthUser />} />

@@ -15,7 +15,7 @@ const CourseCard = () => {
     useEffect( () => {
         fetchCourses()
     }, [] )
-
+    console.log( courses );
 
     return (
         <>
