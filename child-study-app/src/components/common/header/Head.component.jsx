@@ -5,11 +5,11 @@ import "../../../Routes/Header.styles.css"
 const Head = () => {
     // const [isAuth, setIsAuth] = useState( false )
     let navigate = useNavigate();
-    const { isAuth, setShowOnlyAdmin } = useContext( AuthContext )
+    const { isAuth, setShowOnlyAdmin, showOnlyAdmin } = useContext( AuthContext )
 
     const handleLogin = () => {
         navigate( "/login" )
-        setShowOnlyAdmin( true )
+        setShowOnlyAdmin( !showOnlyAdmin )
     }
     return (
         <>
